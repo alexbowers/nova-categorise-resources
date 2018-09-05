@@ -1,15 +1,32 @@
 # Group and categorise your nova resources
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alexbowers/nova-categorise-resources.svg?style=flat-square)](https://packagist.org/packages/alexbowers/nova-categorise-resources)
-![CircleCI branch](https://img.shields.io/circleci/project/github/alexbowers/nova-categorise-resources/master.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/alexbowers/nova-categorise-resources/master.svg?style=flat-square)](https://travis-ci.org/alexbowers/nova-categorise-resources)
 [![Quality Score](https://img.shields.io/scrutinizer/g/alexbowers/nova-categorise-resources.svg?style=flat-square)](https://scrutinizer-ci.com/g/alexbowers/nova-categorise-resources)
 [![Total Downloads](https://img.shields.io/packagist/dt/alexbowers/nova-categorise-resources.svg?style=flat-square)](https://packagist.org/packages/alexbowers/nova-categorise-resources)
 
 
-This is where your description should go. Try and limit it to a paragraph or two.
 
-Add a screenshot of the tool here.
+A nova resource can be given a category name.
+
+If a category name is provided, then that will act as a label.
+
+The label will be standardised, so any changes in capitalisation will be removed
+and it will be converted into Title case.
+
+For example:
+
+"Customers Information", "customers information" and "cUStoMERs INFORMATION"
+
+all become "Customers Information"
+
+If the category is left empty, then all empty resources will get grouped together.
+
+If there is only one category, it will not be collapsable, but will instead have a label above it all
+
+if there is only one category, and it is empty, then it will act as Nova does by default.
+     
+![Categorise Resources Example](https://github.com/alexbowers/nova-categorise-resources/blob/master/screenshots/example.gif?raw=true)
 
 ## Installation
 
@@ -19,62 +36,21 @@ You can install the package in to a Laravel app that uses [Nova](https://nova.la
 composer require alexbowers/nova-categorise-resources
 ```
 
-Next up, you must register the tool with Nova. This is typically done in the `tools` method of the `NovaServiceProvider`.
-
-```php
-// in app/Providers/NovaServiceProvider.php
-
-// ...
-
-public function tools()
-{
-    return [
-        // ...
-        new \AlexBowers\NovaCategoriseResources\Tool(),
-    ];
-}
-```
-
 ## Usage
 
-Click on the "nova-categorise-resources" menu item in your Nova app to see the tool provided by this package.
+In any / all of your resources add
 
-### Testing
-
-``` bash
-composer test
+```php
+public static $category = "Your Category label";
 ```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
 If you discover any security related issues, please email bowersbros@gmail.com instead of using the issue tracker.
 
-## Postcardware
-
-You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
-
-Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
-
-We publish all received postcards [on our company website](https://spatie.be/en/opensource/postcards).
-
 ## Credits
 
 - [Alex Bowers](https://github.com/alexbowers)
-
-## Support us
-
-Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
-
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
-All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
 

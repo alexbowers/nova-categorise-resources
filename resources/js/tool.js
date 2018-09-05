@@ -1,9 +1,5 @@
+import Tool from './components/Tool';
+
 Nova.booting((Vue, router) => {
-    router.addRoutes([
-        {
-            name: 'nova-categorise-resources',
-            path: '/nova-categorise-resources',
-            component: require('./components/Tool'),
-        },
-    ])
-})
+    Vue.component('grouped-resource-collapsable', Tool);
+});

@@ -4,9 +4,7 @@ namespace AlexBowers\NovaCategoriseResources;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use AlexBowers\NovaCategoriseResources\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -17,31 +15,11 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-categorise-resources');
-
-        $this->app->booted(function () {
-            $this->routes();
-        });
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/nova-overrides', 'nova');
 
         Nova::serving(function (ServingNova $event) {
-            //
+            Nova::script('nova-categorise-resources', __DIR__ . '/../dist/js/tool.js');
         });
-    }
-
-    /**
-     * Register the tool's routes.
-     *
-     * @return void
-     */
-    protected function routes()
-    {
-        if ($this->app->routesAreCached()) {
-            return;
-        }
-
-        Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/alexbowers/nova-categorise-resources')
-                ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
