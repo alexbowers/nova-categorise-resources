@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('endpoint', \:namespace_vendor\:namespace_tool_name\Http\Controllers\ToolController::class . '@index');
+Route::get('endpoint', \AlexBowers\NovaCategoriseResources\Http\Controllers\ToolController::class . '@index');

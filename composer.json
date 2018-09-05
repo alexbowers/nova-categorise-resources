@@ -1,6 +1,6 @@
 {
-    "name": ":vendor/:package_name",
-    "description": ":package_description",
+    "name": "alexbowers/nova-categorise-resources",
+    "description": "Group and categorise your nova resources",
     "keywords": [
         "laravel",
         "nova"
@@ -11,12 +11,12 @@
             "url": "../laravel-nova"
         }
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/alexbowers/nova-categorise-resources",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Alex Bowers",
+            "email": "bowersbros@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,18 +30,18 @@
     },
     "autoload": {
         "psr-4": {
-            ":namespace_vendor\\:namespace_tool_name\\": "src/"
+            "AlexBowers\\NovaCategoriseResources\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":namespace_vendor\\:namespace_tool_name\\Tests\\": "tests"
+            "AlexBowers\\NovaCategoriseResources\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                ":namespace_vendor\\:namespace_tool_name\\ToolServiceProvider"
+                "AlexBowers\\NovaCategoriseResources\\ToolServiceProvider"
             ]
         }
     },

@@ -1,8 +1,8 @@
 Nova.booting((Vue, router) => {
     router.addRoutes([
         {
-            name: ':package_name',
-            path: '/:package_name',
+            name: 'nova-categorise-resources',
+            path: '/nova-categorise-resources',
             component: require('./components/Tool'),
         },
     ])
