@@ -24,11 +24,7 @@
         },
         methods: {
             toggle() {
-                if (this.expanded) {
-                    this.expanded = false;
-                } else {
-                    this.expanded = true;
-                }
+                this.expanded = !this.expanded
             }
         }
     }
