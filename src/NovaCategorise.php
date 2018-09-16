@@ -19,7 +19,7 @@ class NovaCategorise extends Nova
                 return ucwords($resource::$category);
             }
 
-            return 'Other';
+            return __('Other');
         })->sort();
     }
 }
