@@ -20,6 +20,6 @@ class NovaCategorise extends Nova
             }
 
             return __('Other');
-        })->sort();
+        })->sortKeys();
     }
 }
