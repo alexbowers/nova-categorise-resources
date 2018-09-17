@@ -9,7 +9,7 @@
 
     @foreach (\AlexBowers\NovaCategoriseResources\NovaCategorise::availableResourcesGrouped(request()) as $group => $resouces)
 
-    <grouped-resource-collapsable header="{{ $group }}">
+    <grouped-resource-collapsable header="{{ $group }}" :last="@json($loop->last)">
         @foreach ($resouces as $key => $resource)
             <li class="leading-wide mb-4 text-sm" key="{{ $key }}">
                 <router-link :to="{
