@@ -1,6 +1,10 @@
 # Deprecated
 
-This is now covered in Nova 1.0.18+ so does not need a package for it.
+This is now covered in Nova 1.0.18+ so does not need a package for it:
+
+```php
+public static $group = 'name'; // you may also use a public static method of the same name
+```
 
 You may continue to use this package if you want to be able to collapse the groups, however I'd recommend going with the core features of Nova.
 
